@@ -13,12 +13,21 @@ app.get('/', (req, res) => {
   res.end("Hello World");
 });
 
-app.get('/inv/:inv_amt', finserv.investment);
+app.get('/inv/:inv_amnt/:age', finserv.investment);
 
-app.get('/investment:user_id', (req, res) => {
-  var amount =  invetment(id);
-  res.end("Hello World");
+//app.get('/inv', finserv.investment);
+
+/* app.get('/inv/:inv_amnt/:age', (req, res) => {
+  var amount =  req.params.inv_amnt;
+  var age =  req.params.age;
+  res.end("Hello World: " + amount + ":" + age);
 });
+
+ app.get('/inv', (req, res) => {
+  var amount =  req.query.inv_amnt;
+  var age =  req.query.age;
+  res.end("Hello World: " + amount + ":" + age);
+}); */
 
 app.use(function(req, res) {
   res.status(404).send({url: req.originalUrl + ' not found'})
