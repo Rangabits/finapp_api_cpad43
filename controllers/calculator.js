@@ -1,6 +1,46 @@
 module.exports = {
-    investment_cal: function (inv_amount, age) {
+    inv_prop: function (salary, age) {
         var base_amount = 0;
+        if ( age < 31) {
+            if ( salary < 50000 ) {
+                base_amount = salary * 0.10;                
+            } 
+            else {
+                base_amount = salary * 0.20;                
+            }
+        }
+        else if ( age >= 31 && age < 45) {
+            if ( salary < 150000 ) {
+                base_amount = salary * 0.25;                
+            } 
+            else {
+                base_amount = salary * 0.35;                
+            }       
+        }
+        else if ( age >= 45 && age < 55) {
+            if ( salary < 150000 ) {
+                base_amount = salary * 0.20;                
+            } 
+            else {
+                base_amount = salary * 0.30;                
+            }      
+        }
+        else {
+            if ( salary < 150000 ) {
+                base_amount = salary * 0.10;                
+            } 
+            else {
+                base_amount = salary * 0.25;                
+            }   
+        }
+
+        var output = {
+            "InvProposal_Amount": base_amount,
+        }
+        return output;
+    },
+
+    inv_cal: function (base_amount, age) {
         var hr_low = 0
             hr_high = 0
             mr_low = 0
@@ -9,12 +49,6 @@ module.exports = {
             lr_high = 0;
 
         if ( age < 31) {
-            if ( inv_amount < 50000 ) {
-                base_amount = inv_amount * 0.10;                
-            } 
-            else {
-                base_amount = inv_amount * 0.20;                
-            }
             hr_low = base_amount * 0;
             hr_high = base_amount * 0.30;
             mr_low = base_amount * 0.20;
@@ -23,12 +57,6 @@ module.exports = {
             lr_high = base_amount * 0.50;
         }
         else if ( age >= 31 && age < 45) {
-            if ( inv_amount < 150000 ) {
-                base_amount = inv_amount * 0.25;                
-            } 
-            else {
-                base_amount = inv_amount * 0.35;                
-            }
             hr_low = base_amount * 0;
             hr_high = base_amount * 0.30;
             mr_low = base_amount * 0;
@@ -37,12 +65,6 @@ module.exports = {
             lr_high = base_amount * 0.40;       
         }
         else if ( age >= 45 && age < 55) {
-            if ( inv_amount < 150000 ) {
-                base_amount = inv_amount * 0.20;                
-            } 
-            else {
-                base_amount = inv_amount * 0.30;                
-            }
             hr_low = base_amount * 0;
             hr_high = base_amount * 0.30;
             mr_low = base_amount * 0;
@@ -51,12 +73,6 @@ module.exports = {
             lr_high = base_amount * 0.40;      
         }
         else {
-            if ( inv_amount < 150000 ) {
-                base_amount = inv_amount * 0.10;                
-            } 
-            else {
-                base_amount = inv_amount * 0.25;                
-            }
             hr_low = base_amount * 0;
             hr_high = base_amount * 0.10;
             mr_low = base_amount * 0.50;

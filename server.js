@@ -13,7 +13,8 @@ app.get('/', (req, res) => {
   res.end("Hello World");
 });
 
-app.get('/inv/:inv_amnt/:age', finserv.investment);
+app.get('/inv_prop/:salary/:age', finserv.inv_prop);
+app.get('/inv_cal/:inv_amnt/:age', finserv.inv_cal);
 
 //app.get('/inv', finserv.investment);
 
