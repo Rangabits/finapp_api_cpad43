@@ -1,4 +1,5 @@
 module.exports = {
+    // Calculate Proposed Investment Amount
     inv_prop: function (salary, age) {
         var base_amount = 0;
         if ( age < 31) {
@@ -40,6 +41,7 @@ module.exports = {
         return output;
     },
 
+    // Calculate Investment Details
     inv_cal: function (base_amount, age) {
         var hr_low = 0
             hr_high = 0
@@ -49,36 +51,36 @@ module.exports = {
             lr_high = 0;
 
         if ( age < 31) {
-            hr_low = base_amount * 0;
+            hr_low = base_amount * 0.10;
             hr_high = base_amount * 0.30;
             mr_low = base_amount * 0.20;
             mr_high = base_amount * 0.50;
-            lr_low = base_amount * 0;
+            lr_low = base_amount * 0.40;
             lr_high = base_amount * 0.50;
         }
         else if ( age >= 31 && age < 45) {
-            hr_low = base_amount * 0;
+            hr_low = base_amount * 0.20;
             hr_high = base_amount * 0.30;
-            mr_low = base_amount * 0;
+            mr_low = base_amount * 0.20;
             mr_high = base_amount * 0.30;
-            lr_low = base_amount * 0;
+            lr_low = base_amount * 0.30;
             lr_high = base_amount * 0.40;       
         }
         else if ( age >= 45 && age < 55) {
-            hr_low = base_amount * 0;
+            hr_low = base_amount * 0.10;
             hr_high = base_amount * 0.30;
-            mr_low = base_amount * 0;
-            mr_high = base_amount * 0.30;
-            lr_low = base_amount * 0;
-            lr_high = base_amount * 0.40;      
+            mr_low = base_amount * 0.40;
+            mr_high = base_amount * 0.60;
+            lr_low = base_amount * 0.40;
+            lr_high = base_amount * 0.50;      
         }
         else {
-            hr_low = base_amount * 0;
-            hr_high = base_amount * 0.10;
-            mr_low = base_amount * 0.50;
+            hr_low = base_amount * 0.10;
+            hr_high = base_amount * 0.20;
+            mr_low = base_amount * 0.40;
             mr_high = base_amount * 0.60;
-            lr_low = base_amount * 0.50;
-            lr_high = base_amount * 0.40;
+            lr_low = base_amount * 0.40;
+            lr_high = base_amount * 0.50;
                 
         }
 
@@ -104,6 +106,8 @@ module.exports = {
         return output;
     },
     
+// Similalry functions need to be built for other calculators
+
 };
   
   
