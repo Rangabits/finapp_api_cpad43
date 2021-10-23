@@ -1,0 +1,63 @@
+<html>
+<head>
+    <meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>FinApp - API</title>
+    <style>
+        h4 {
+            padding: 6px;
+            background-color: rgba(45, 45, 45, 0.1);
+        }
+
+        </style>
+   </head>
+<body>
+<div >
+    <br> <br>
+    <center>
+	<h2 ><span>Welcome to FinApp API</span></h2>
+    <p> We provide REST APIs for all financial calculators</p>
+    </center>
+    <br> <br> 
+    <h4>1. GET:  /inv_prop/salary/age</h4>
+        <p>Proposes the annual investment amount based on Salary and Age.</p>
+    <br> <br>
+    <h4>2. GET:  /inv_cal/inv_amnt/age</h4>
+        <p>Calculates and provide Investment propsals in JSON format based on the annual investment amount and age for 5 years.</p>
+        <h5>Result:</h5>
+        <pre> HighRisk_Low: Minimum Amount to Invest in High Risk.
+            <br> HighRisk_High: Maximum Amount to Invest in High Risk.
+            <br> MidRisk_Low: Minimum Amount to Invest in Medium Risk.
+            <br> MidRisk_High: Maximum Amount to Invest in Medium Risk.
+            <br> LowRisk_Low: Minimum Amount to Invest in Low Risk.
+            <br> LowRisk_High: Maximum Amount to Invest in Low Risk.
+            <br> Invested_Amount: Actual Amount invested in 5 years.
+            <br> Estimated_Investment_Return: Estimated Return from investments as of current rate.
+            <br> Estimated_Bank_Return: Estimated Return if saved in Bank as of current rate.
+            <br> Investment_Gain: Estimated Gain from investments as of current rate.
+            <br> Bank_Gain: Estimated Gain from Bank savings as of current rate.
+        </pre>
+    <br> <br>
+    <h4>3. GET:  /emi_rate/l_type</h4>
+        <p>Proposes a emi rate based on the selected Loan Category.</p>
+        <pre>
+            <br> Rate_Pers_Loan: 10%.
+            <br> Rate_Edu_Loan: 6%.
+            <br> Rate_Home_Loan: 11%.
+            <br> Rate_Auto_Loan: 12%.
+        </pre>
+    <br> <br>
+    <h4>4. GET:  /emi_cal/l_type/p_amount/i_rate/i_time</h4>
+        <p>Calculates the emi based on the loan category, principle amount, interest rate and duration provided.</p>
+        <pre>
+            <br> Loan_Type: Loan Category.
+            <br> Principle_Amount: Principle Amount for the loan.
+            <br> Interest_Rate: Rate of interest.
+            <br> Tenure_Years: Duration in years.
+            <br> Cal_EMI: Equal Monthly installments for the loan. 
+        </pre>
+    <br> <br>
+
+</div>
+</body>
+</html>

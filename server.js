@@ -5,12 +5,13 @@ const finserv = require('./controllers/finserv')
 const calculator = require('./controllers/calculator')
 var bodyParser = require('body-parser');
 
+app.set("view engine","ejs");
+
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
 app.get('/', (req, res) => {
- // var amount =  fs.invetment(1000);
-  res.end("Hello World");
+    res.render("home");
 });
 
 // getting proposed investment amount
