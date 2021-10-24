@@ -35,6 +35,8 @@ module.exports = {
             }   
         }
 
+        base_amount = base_amount/10;
+
         var output = {
             "InvProposal_Amount": base_amount,
         }
@@ -43,6 +45,9 @@ module.exports = {
 
     // Calculate Investment Details
     inv_cal: function (base_amount, age) {
+        
+        base_amount = base_amount;
+
         var hr_low = 0
             hr_high = 0
             mr_low = 0
@@ -84,7 +89,7 @@ module.exports = {
                 
         }
 
-        var est_amnt = base_amount * 5;
+        var est_amnt = base_amount * 5 * 12;
         var est_inv_val = est_amnt + ( est_amnt * 0.16 );
         var est_bnk_val = est_amnt + ( est_amnt * 0.07 );
         var inv_gain = est_inv_val - est_amnt;
